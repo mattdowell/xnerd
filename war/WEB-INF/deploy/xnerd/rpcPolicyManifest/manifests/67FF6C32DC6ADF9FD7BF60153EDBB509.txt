@@ -1,0 +1,2 @@
+serviceClass: org.dowell.xnerd.client.service.VoteService
+path: B124A438421E6DB46834D806F2A7D751.gwt.rpc

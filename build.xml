@@ -1,0 +1,26 @@
+<project name="xnerd" basedir="." default="default">
+
+	<property name="src" location="BenPlanMgr_BATCH" />
+		
+	<target name="default" depends="buildwar,deploy">
+	</target>
+
+	<!-- The default output directory for the SRC folder is /war/WEB-INF/Classes so we shouldn't have to create a JAR -->
+	<target name="buildwar">
+		
+		<!-- First, JAR up our source and copy it to the WAR LIB dir -->
+		<jar destfile="war/WEB-INF/lib/xnerd.jar" basedir="war/WEB-INF/classes" excludes="**/*Test.class"/>
+		
+		<war basedir="war" destfile="xnerd.war" webxml="war/WEB-INF/web.xml">
+			<exclude name="WEB-INF/**" />
+			<webinf dir="war/WEB-INF/">
+				<include name="**/*.jar" />
+			</webinf>
+		</war>
+	</target>
+
+	<target name="deploy">
+		<copy file="xnerd.war" todir="." />
+	</target>
+
+</project>

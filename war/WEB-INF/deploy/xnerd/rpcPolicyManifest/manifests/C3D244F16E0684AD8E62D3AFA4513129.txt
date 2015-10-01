@@ -1,0 +1,2 @@
+serviceClass: org.dowell.xnerd.client.service.GameService
+path: 8152D4FF51269CFFF26122C6AB3C6346.gwt.rpc
